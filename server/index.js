@@ -1,7 +1,11 @@
 import express from 'express';
+import db from './config/db';
 
 const app = express();
 
+// Database
+
+db();
 
 const PORT = process.env.PORT || 5000;
 
