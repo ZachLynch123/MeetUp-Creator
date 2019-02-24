@@ -12,3 +12,11 @@ export const createMeetup = async (req, res) => {
         return res.status(500).json({error: true, message: "Error w/ meetup"})
     }
 }
+
+export const getAllMeetups = async (req, res) => {
+    try {
+        res.status(200).json({meetups: await Meetup.find({})})
+    } catch (e) {
+        return res.status(500).json({error: true, message: "Error w/ meetup"})
+    }
+}
